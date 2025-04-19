@@ -1,6 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            animation: {
+              "fade-in-up": "fadeInUp 1s ease-out forwards",
+              "bounce-float": "bounceFloat 3s infinite ease-in-out",
+              "pulse-glow": "pulseGlow 2s infinite",
+            },
+            keyframes: {
+              fadeInUp: {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              bounceFloat: {
+                "0%, 100%": { transform: "translateY(0)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+              pulseGlow: {
+                "0%, 100%": { boxShadow: "0 0 0px rgba(255,255,255,0.5)" },
+                "50%": { boxShadow: "0 0 20px rgba(255,255,255,0.9)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Our Group Home</title>
@@ -8,67 +37,164 @@
   </head>
   <body>
     <!-- Hero Section -->
-    <header class="hero">
-      <h1>Welcome to Our Group Home</h1>
-      <p>A place where care meets community.</p>
-      <a href="#services" class="btn">Explore Services</a>
+    <header
+      class="bg-green-600 text-white text-center py-16 px-4 animate-fade-in-up animate-bounce-float"
+    >
+      <h1 class="text-4xl font-bold mb-4">Welcome to Our Group Home</h1>
+      <p class="text-lg mb-6">A place where care meets community.</p>
+      <a
+        href="#services"
+        class="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300 animate-pulse-glow"
+      >
+        Explore Services
+      </a>
     </header>
 
     <!-- Mission Section -->
-    <section id="mission" class="section">
-      <h2>Our Mission</h2>
-      <p>
+    <section id="mission" class="py-16 px-4 bg-white text-center">
+      <h2 class="text-3xl font-bold mb-4 text-gray-800">Our Mission</h2>
+      <p class="max-w-2xl mx-auto text-lg text-gray-600">
         Our mission is to provide a safe, nurturing environment where
         individuals can thrive and feel a sense of belonging.
       </p>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section">
-      <h2>Our Services</h2>
-      <ul>
-        <li>24/7 Care and Support</li>
-        <li>Daily Activities and Recreation</li>
-        <li>Individualized Development Plans</li>
+    <section id="services" class="py-16 px-4 bg-gray-100 text-center">
+      <h2 class="text-3xl font-bold mb-8 text-gray-800">Our Services</h2>
+      <ul class="max-w-xl mx-auto space-y-4 text-lg text-gray-700">
+        <li>✅ 24/7 Care and Support</li>
+        <li>🎨 Daily Activities and Recreation</li>
+        <li>📈 Individualized Development Plans</li>
       </ul>
+    </section>
+    <section id="gallery" class="py-20 px-6 bg-gray-900 text-white text-center">
+      <h2 class="text-3xl font-bold mb-10">Our Community Moments</h2>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
+      >
+        <!-- Card Template -->
+        <div
+          class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-xl duration-500 animate-fade-in-up"
+        >
+          <img src="IMAGE1.WEBP" alt="Moment 1" class="w-full" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Moment One</h3>
+            <p class="text-sm text-gray-300">Capturing joy and togetherness.</p>
+          </div>
+        </div>
+
+        <!-- Repeat Card with different content -->
+        <div
+          class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-xl duration-500 animate-fade-in-up"
+        >
+          <img src="IMAGE1.WEBP" alt="Moment 2" class="w-full" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Moment Two</h3>
+            <p class="text-sm text-gray-300">
+              Celebrating milestones with love.
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-xl duration-500 animate-fade-in-up"
+        >
+          <img src="IMAGE1.WEBP" alt="Moment 3" class="w-full" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Moment Three</h3>
+            <p class="text-sm text-gray-300">Daily activities and smiles.</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-xl duration-500 animate-fade-in-up"
+        >
+          <img src="IMAGE1.WEBP" alt="Moment 4" class="w-full" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Moment Four</h3>
+            <p class="text-sm text-gray-300">Bonding through creativity.</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-xl duration-500 animate-fade-in-up"
+        >
+          <img src="IMAGE1.WEBP" alt="Moment 5" class="w-full" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Moment Five</h3>
+            <p class="text-sm text-gray-300">Growth, support, and care.</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-xl duration-500 animate-fade-in-up"
+        >
+          <img src="IMAGE1.WEBP" alt="Moment 6" class="w-full" />
+          <div class="p-4">
+            <h3 class="text-lg font-semibold">Moment Six</h3>
+            <p class="text-sm text-gray-300">
+              Together is a beautiful place to be.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section">
-      <h2>Contact Us</h2>
-      <form>
-        <label for="name">Your Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Enter your name"
-          required
-        />
+    <section id="contact" class="py-16 px-4 bg-white text-center">
+      <h2 class="text-3xl font-bold mb-8 text-gray-800">Contact Us</h2>
+      <form class="max-w-xl mx-auto space-y-4 text-left">
+        <div>
+          <label for="name" class="block mb-1 font-semibold text-gray-700"
+            >Your Name:</label
+          >
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+        </div>
 
-        <label for="email">Your Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Enter your email"
-          required
-        />
+        <div>
+          <label for="email" class="block mb-1 font-semibold text-gray-700"
+            >Your Email:</label
+          >
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          />
+        </div>
 
-        <label for="message">Your Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="How can we help?"
-          required
-        ></textarea>
+        <div>
+          <label for="message" class="block mb-1 font-semibold text-gray-700"
+            >Your Message:</label
+          >
+          <textarea
+            id="message"
+            name="message"
+            required
+            rows="5"
+            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          ></textarea>
+        </div>
 
-        <button type="submit" class="btn">Send Message</button>
+        <button
+          type="submit"
+          class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-2 rounded-full transition duration-300"
+        >
+          Send Message
+        </button>
       </form>
     </section>
 
-    <footer>
-      <p>&copy; b Our Group Home. All rights reserved.</p>
+    <footer class="bg-gray-800 text-white text-center py-6 mt-12">
+      <p class="text-sm">&copy; 2025 Our Group Home. All rights reserved.</p>
     </footer>
   </body>
 </html>
